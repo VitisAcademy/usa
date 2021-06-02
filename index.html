@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Аргентина</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/draggabilly.pkgd.min.js"></script>
+  <script src="js/db.js"></script>
+</head>
+<body>
+<div class="ave">
+  <div class="ave__title">Введите email</div>
+  <input type="email" maxlength="40" autocomplete="off" onkeyup="checkValidate(this)" autofocus class="ave__input">
+  <div class="ave__button button" onclick="logIn()">Продолжить</div>
+</div>
+<div class="header">
+  <div class="header__menu" onclick="toggleHamburger()"></div>
+  <div class="header__title">Журналист</div>
+</div>
+<div class="main">
+  <div class="task">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Помогите журналисту написать статью. Для этого заполните пробелы в предложениях.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page scribe left">
+      <div class="scribe__title">
+          <input type="text" maxlength="8" autocomplete="off" class="scribe__input" style='width: calc(132px + (148 - 132) * ((100vw - 320px) / 880))'>
+          вина, Производятся из любого сорта винограда, выращенного на территории США.<br>
+          <input type="text" maxlength="7" autocomplete="off" class="scribe__input" style='width: calc(116px + (130 - 116) * ((100vw - 320px) / 880))'>
+          вина. Предназначены для внутреннего рынка, поскольку это вина с заимствованными названиями.<br>
+          <input type="text" maxlength="3" autocomplete="off" class="scribe__input" style='width: calc(50px + (56 - 50) * ((100vw - 320px) / 880))'>
+          . Вина, контролируемые по происхождению, система аппелласьонов или доминасьонов, известная нам по европейским странам.<br>
+          <input type="text" maxlength="11" autocomplete="off" class="scribe__input" style='width: calc(182px + (204 - 182) * ((100vw - 320px) / 880))'>
+          . Произведены из винограда, 75% которого составляет указанный на этикетке сорт.
+          <input type="text" maxlength="7" autocomplete="off" class="scribe__input" style='width: calc(116px + (130 - 116) * ((100vw - 320px) / 880))'>
+          . Выборка лучшего сортового вина определенного года урожая, выдержанного в дубовых бочках установленное время.
+          <input type="text" maxlength="4" autocomplete="off" class="scribe__input" style='width: calc(66px + (74 - 66) * ((100vw - 320px) / 880))'>
+          . Вина производятся исключительно из традиционных для Бордо сортов винограда.
+          <input type="text" maxlength="6" autocomplete="off" class="scribe__input" style='width: calc(99px + (111 - 99) * ((100vw - 320px) / 880))'>
+          . В переводе с индейского – “долина изобилия”. Репутация базируется на Шардоне и Каберне Совиньоне. 450 виноделен и выращивают разные сорта винограда, включая Пино Нуар, Мерло, Зинфандель.
+          <input type="text" maxlength="4" autocomplete="off" class="scribe__input" style='width: calc(66px + (74 - 66) * ((100vw - 320px) / 880))'>
+          . Второй важнейший регион Калифорнии. История тесно связана с русскими. Согласно историческим данным первый виноградник в этом регионе был заложен русскими колонистами в 1812 году.
+          <input type="text" maxlength="8" autocomplete="off" class="scribe__input" style='width: calc(132px + (148 - 132) * ((100vw - 320px) / 880))'>
+          Ривер. Известный терруар, был назван в память о русских колонистах, которые в здешних местах в 1812 году обосновали поселение Форт-Росс.
+          <input type="text" maxlength="4" autocomplete="off" class="scribe__input" style='width: calc(66px + (74 - 66) * ((100vw - 320px) / 880))'>
+          . Признан наиболее климатически подходящим регионом для выращивания качественного виноматериала. Климат на северо-востоке прохладный и способствует долгому, постепенному вызреванию винограда с идеальным балансом кислотности и сахаристости.
+          <input type="text" maxlength="11" autocomplete="off" class="scribe__input" style='width: calc(182px + (204 - 182) * ((100vw - 320px) / 880))'>
+          побережье. Наполовину занято посадками белого винограда, особенно Шардоне. Самые разнообразные вина производят маленькие винодельни и несколько крупных игроков рынка.
+          <input type="text" maxlength="13" autocomplete="off" class="scribe__input" style='width: calc(215px + (241 - 215) * ((100vw - 320px) / 880))'>
+          . Виноград появился с тех пор, как отец Юниперо Серра впервые привез туда черенки в 1782 году. Современное виноделие началось с винодельни, основанной в центре города в 1962 году. Сегодня в нескольких минутах ходьбы на складах находятся восемь виноделен и дегустационных залов друг от друга в центре города.
+      </div>
+      <div class=" button" onclick="scoreButton(0);scribeCheck()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden" style="z-index: 3"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Выберите подходящие ноты для сорта Зинфандель.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page one left" style="z-index: 1">
+      <div class="one__grid">
+        <div class="one__categories oneM"></div>
+        <div class="one__bottle" style="background: url('img/zin.png') no-repeat center/cover"></div>
+      </div>
+      <div class="button" onclick="scoreButton(1);sortOneScore()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочитайте внимательно вопрос. Дайте развёрнутый ответ в комментариях к уроку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page asked left">
+      <div class="asked__title"></div>
+      <div class=" button" onclick="endButton()">Дать ответ!</div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>
+<div class="menu menu__off">
+  <div class="menu__content"></div>
+</div>
+<script src="js/scribe.js"></script>
+<script src="js/sort_one.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
